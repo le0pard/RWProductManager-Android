@@ -3,21 +3,42 @@
     package="ua.in.leopard.RWProductManager"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <supports-screens
+		android:largeScreens="true"
+		android:normalScreens="true"
+		android:smallScreens="true"
+		android:resizeable="true"
+		android:anyDensity="true"
+		/>
 
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="4" />
 
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
-            android:name=".RWProductManagerActivity" >
+            android:name=".RWProductManagerActivity"
+            android:configChanges="orientation|keyboardHidden" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.phonegap.DroidGap"
+             android:label="@string/app_name"
+             android:configChanges="orientation|keyboardHidden"></activity>
+        <activity android:name="com.phonegap.plugins.childBrowser.ChildBrowser" 
+                android:label="@string/app_name">
+		  <intent-filter>
+		  </intent-filter>
+		</activity> 
     </application>
+    
+    <uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
